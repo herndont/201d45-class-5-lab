@@ -92,8 +92,12 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-// var end_sum=0;
-//  var sum_string = '';
+  var total = 0;
+
+  for (var i=0; i < sumArr.length; i++){
+    total = sum(total, sumArr[i])[0];
+  }
+  return [total, sumArr.toString() + ' was passed in as an array of numbers, and 9 is their sum.'];
 }
 
 //for loop (){
