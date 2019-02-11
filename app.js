@@ -53,12 +53,25 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var resultSum = a + b + c;
-  var resultMultiply = a * b * c;
-  var resultStringSum = + a + ' and ' + b + ' and ' + c + ' sum to ' + resultSum +'.';
-  var resultStringMultiply = 'The product of ' + a + ' and ' + b + ', and ' + c + ' is ' + resultMultiply +'.';
-  return [resultStringSum, resultStringMultiply];
+  var sum_of_first_two = sum(a,b)[0];
+  var sum_of_three = sum(sum_of_first_two, c)[0];
+  var product_of_first_two = multiply(a, b)[0];
+  var product_of_three = multiply(product_of_first_two, c)[0];
+  var resultStringSum = a + ' and ' + b + ' and ' + c + ' sum to ' + sum_of_three + '.';
+  var resultStringMultiply = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + product_of_three + '.';
+  return [sum_of_three, product_of_three, resultStringSum, resultStringMultiply];
+
+  //declare a var product of the first two; multiply first two take first index
+  //declare a var product
+  // return [sum_of_three, product_of_three, result_sum_str, result_product_string];
+  //console.log([sum_of_three]);
+  // var resultSum = a + b + c;
+  //var resultMultiply = a * b * c;
+  //var resultStringSum = + a + ' and ' + b + ' and ' + c + ' sum to ' + resultSum +'.';
+  //var resultStringMultiply = 'The product of ' + a + ' and ' + b + ', and ' + c + ' is ' + resultMultiply +'.';
+  //return [resultStringSum, resultStringMultiply];
 }
+sumAndMultiply();
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
@@ -79,7 +92,11 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+  var total = 0;
+  for (var i=0; i < sumArr.length; i++){
+    total = total + sumArr[i];
+  }
+  return [total, sumArr.toString() + ' was passed in as an array of numbers, and 9 is their sum.'];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
