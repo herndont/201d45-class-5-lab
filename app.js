@@ -71,7 +71,6 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
   //var resultStringMultiply = 'The product of ' + a + ' and ' + b + ', and ' + c + ' is ' + resultMultiply +'.';
   //return [resultStringSum, resultStringMultiply];
 }
-sumAndMultiply();
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
@@ -155,6 +154,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
+
+function multiplyAnyArray(dynamicArray){
+  var total = 1;
+  
+  for (var i=0; i < dynamicArray.length; i++){
+    total = multiply(total, dynamicArray[i])[0];
+  }
+  return [total, 'The numbers ' +dynamicArray.toString() + ' have a product of ' + total + '.'];
+}
 
 //function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 //}
