@@ -97,9 +97,8 @@ function sumArray(sumArr) { //eslint-disable-line
   for (var i=0; i < sumArr.length; i++){
     total = sum(total, sumArr[i])[0];
   }
-  return [total, sumArr.toString() + ' was passed in as an array of numbers, and 9 is their sum.'];
+  return [total, sumArr.toString() + ' was passed in as an array of numbers, and ' + total + ' is their sum.'];
 }
-
 //for loop (){
 //  add a single number to the end_sum
 //  also build the first part of the string
@@ -125,7 +124,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  var total = 1;
 
+  for (var i=0; i < multArr.length; i++){
+    total = multiply(total, multArr[i])[0];
+  }
+  return [total, 'The numbers ' + multArr.toString() + ' have a product of ' + total + '.'];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
